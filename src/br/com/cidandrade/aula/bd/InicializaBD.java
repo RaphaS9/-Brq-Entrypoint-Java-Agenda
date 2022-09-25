@@ -58,7 +58,7 @@ public class InicializaBD {
     public static Connection conectar() {
         Connection con = null;
         final String USUARIO = "root";
-        final String SENHA = "Guardaroupa09";
+        final String SENHA = "";
         final String URL = "jdbc:mysql://localhost/agenda";
         try {
             con = DriverManager.getConnection(URL,
