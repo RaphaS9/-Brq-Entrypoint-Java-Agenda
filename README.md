@@ -45,7 +45,7 @@ No meu caso fiz através da IDE (novamento erro por já estar criado):
 
 
 # Demonstração
-A seguir há alguns gifs com a demonstração do funcionamento pleno do programa para referência.
+A seguir alguns gifs com a demonstração do funcionamento pleno do programa para referência.
 
 ## Tabela Conhecido
 - ### Inserindo Conhecido
@@ -53,8 +53,22 @@ A seguir há alguns gifs com a demonstração do funcionamento pleno do programa
 
 
 - ### Alterando Conhecido
-![Gif demonstrando a alteraão de um novo conhecido na tabela](./readmeImgs/conhecido/alterandoConhecido.gif)
+![Gif demonstrando a alteraão de um conhecido na tabela](./readmeImgs/conhecido/alterandoConhecido.gif)
 
 
 - ### Removendo Conhecido
-![Gif demonstrando a alteraão de um novo conhecido na tabela](./readmeImgs/conhecido/alterandoConhecido.gif)
+![Gif demonstrando a remoção de um conhecido na tabela](./readmeImgs/conhecido/deletandoConhecido.gif)
+
+
+
+## Tabela Contato
+- ### Inserindo novo contato
+![Gif demonstrando a inserção de um novo contato na tabela](./readmeImgs/contato/inserindoContato.gif)
+
+
+- ### Inserindo novo contato
+![Gif demonstrando a alteração de um contato na tabela](./readmeImgs/contato/alterandoContato.gif)
+
+
+- ### Inserindo novo contato
+![Gif demonstrando a remoção de um novo contato na tabela](./readmeImgs/contato/deletandoContato.gif)
