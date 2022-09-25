@@ -59,17 +59,19 @@ A seguir alguns gifs com a demonstração do funcionamento pleno do programa par
 <br>
 
 - ### Removendo Conhecido
+Para remover um conhecido, todos os seus contatos devem ter sido removidos anteriormente, ou seja ele não pode ter nenhum contato salvo ou um erro será apresentado.
 ![Gif demonstrando a remoção de um conhecido na tabela](./readmeImgs/conhecido/deletandoConhecido.gif)
 <br><br>
 
 ## Tabela Contato
 - ### Inserindo novo contato
+Para inserir um novo contato, primeiro deve-se selecionar o conhecido em que deseja adicionar o contato, na primeira tela, então alterar a tela para contato e então selecionar o botão inserir. O mesmo conceito será utilizado para alteração e remoção.
 ![Gif demonstrando a inserção de um novo contato na tabela](./readmeImgs/contato/inserindoContato.gif)
 <br>
 
-- ### Inserindo novo contato
+- ### Alterando novo contato
 ![Gif demonstrando a alteração de um contato na tabela](./readmeImgs/contato/alterandoContato.gif)
 <br>
 
-- ### Inserindo novo contato
+- ### Removendo novo contato
 ![Gif demonstrando a remoção de um novo contato na tabela](./readmeImgs/contato/deletandoContato.gif)
