@@ -1,5 +1,5 @@
 ## Exercício do curso entrypoint JAVA da Brq, professor Cid Andrade.
-
+Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch (professor) está o código do professor que recebemos para alterá-lo.<br>
 ## <a href="https://drive.google.com/file/d/1S-v5-aNZMSCWquK5FhN2VlZAyzqn0FA3/view)" taget="_blank">link da aula</a>
 
 # Descricao do Projeto
