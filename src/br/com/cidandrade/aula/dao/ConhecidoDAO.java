@@ -1,5 +1,6 @@
 package br.com.cidandrade.aula.dao;
 
+import br.com.cidandrade.aula.Base;
 import br.com.cidandrade.aula.bd.OperacaoBD;
 import br.com.cidandrade.aula.entidade.Conhecido;
 import br.com.cidandrade.aula.enums.Referencia;
@@ -27,7 +28,7 @@ public class ConhecidoDAO {
         String sql = String.format(INSERT_SQL,
                 conhecido.getNome(),
                 conhecido.getReferencia().getReferencia());
-        OperacaoBD.execute(sql, true);
+        OperacaoBD.execute(sql, true, "Inserido com sucesso");
     }
 
     public static void alterar(Conhecido conhecido) {
@@ -35,12 +36,12 @@ public class ConhecidoDAO {
                 conhecido.getNome(),
                 conhecido.getReferencia().getReferencia(),
                 conhecido.getId());
-        OperacaoBD.execute(sql, true);
+        OperacaoBD.execute(sql, true, "Alterado com sucesso");
     }
 
     public static void apagar(Conhecido conhecido) {
         String sql = String.format(DELETE_SQL, conhecido.getId());
-        OperacaoBD.execute(sql, true);
+        OperacaoBD.execute(sql, true, "Removido com sucesso");
     }
 
     public static List<Conhecido> selecionarTodos() {

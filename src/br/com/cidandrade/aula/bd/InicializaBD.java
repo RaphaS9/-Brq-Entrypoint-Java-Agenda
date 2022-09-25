@@ -1,5 +1,6 @@
 package br.com.cidandrade.aula.bd;
 
+import br.com.cidandrade.aula.Base;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -9,6 +10,10 @@ public class InicializaBD {
     public static void inicializarBD() {
         String sql;
         Connection con = conectar();
+        sql = "Drop table if exists contato";
+        execute(con, sql);
+        sql = "Drop table if exists conhecido";
+        execute(con, sql);
         sql = "Create table if not exists conhecido "
                 + "(id int not null auto_increment primary key, "
                 + "nome varchar(30) not null, "
@@ -22,6 +27,8 @@ public class InicializaBD {
                 + "identificacao varchar(40) not null, "
                 + "foreign key (idConhecido) references conhecido(id))";
         execute(con, sql);
+        
+//        inserindo dados para teste
         sql = "Insert into conhecido (nome, referencia) values ('Gumercindo', 'Igreja')";
         execute(con, sql);
         sql = "Insert into conhecido (nome, referencia) values ('Adolfo', 'Trabalho')";
@@ -50,15 +57,15 @@ public class InicializaBD {
 
     public static Connection conectar() {
         Connection con = null;
-        final String USUARIO = "cidandrade";
-        final String SENHA = "123456";
+        final String USUARIO = "root";
+        final String SENHA = "Guardaroupa09";
         final String URL = "jdbc:mysql://localhost/agenda";
         try {
             con = DriverManager.getConnection(URL,
                     USUARIO, SENHA);
         } catch (SQLException ex) {
-            //   Base.mensagemDeErro("Não foi possível conectar ao banco de dados. "
-            //           + "Verifique e tente posteriormente");
+               Base.mensagemDeErro("Não foi possível conectar ao banco de dados. "
+                       + "Verifique e tente posteriormente");
             System.exit(1);
         }
         return con;
@@ -76,7 +83,7 @@ public class InicializaBD {
             con.createStatement().executeUpdate(sql);
         } catch (SQLException ex) {
             System.out.println(ex.getLocalizedMessage());
-            //   Base.mensagemDeErro("Não foi possível executar\n" + sql);
+               Base.mensagemDeErro("Não foi possível executar\n" + sql);
             System.exit(1);
         }
     }

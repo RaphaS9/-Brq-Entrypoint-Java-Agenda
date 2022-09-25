@@ -1,7 +1,7 @@
 package br.com.cidandrade.aula.enums;
 
 public enum Referencia {
-    VIZINHANCA("Vizinhança"),
+    VIZINHANCA("Vizinhanca"),
     TRABALHO("Trabalho"),
     IGREJA("Igreja"),
     EX("Ex"),

@@ -1,9 +1,14 @@
 package br.com.cidandrade.aula.gui;
 
+import br.com.cidandrade.aula.Base;
+import br.com.cidandrade.aula.bd.InicializaBD;
 import br.com.cidandrade.aula.dao.ConhecidoDAO;
 import br.com.cidandrade.aula.dao.ContatoDAO;
 import br.com.cidandrade.aula.entidade.Conhecido;
 import br.com.cidandrade.aula.entidade.Contato;
+import br.com.cidandrade.aula.enums.Referencia;
+import br.com.cidandrade.aula.enums.TipoContato;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,6 +19,16 @@ public class AgendaGUI extends javax.swing.JFrame {
      */
     public AgendaGUI() {
         initComponents();
+        InicializaBD.inicializarBD();
+        populaCombos();
+        mostraRegistros();
+        btnAlterarTabGerConh.setVisible(false);
+        txfConhTabGerenciaCont.setEditable(false);
+        btnAlterarTabCont.setVisible(false);
+        btnInserirTabGerCont.setVisible(false);
+    }
+    
+    private void mostraRegistros() {
         String[] camposConhecido = {"ID", "Nome", "Referencia"};
         List<Conhecido> conhecidos = ConhecidoDAO.selecionarTodos();
         String[][] dadosConhecidos;
@@ -29,6 +44,21 @@ public class AgendaGUI extends javax.swing.JFrame {
         DefaultTableModel modelo = new DefaultTableModel(
                 dadosConhecidos, camposConhecido);
         jtConhecidos.setModel(modelo);
+        }
+        
+    
+    private void populaCombos() {
+        jcbReferencias.removeAllItems();
+        Referencia[] arrayReferencias = Referencia.values();
+        for (Referencia rf : arrayReferencias) {
+            jcbReferencias.addItem(rf.toString());
+        }
+        
+        jcbTipos.removeAllItems();
+        TipoContato[] arrayTiposContato = TipoContato.values();
+        for (TipoContato ctt : arrayTiposContato) {
+            jcbTipos.addItem(ctt.toString());
+        }
     }
 
     /**
@@ -45,11 +75,43 @@ public class AgendaGUI extends javax.swing.JFrame {
         jpConhecidos = new javax.swing.JPanel();
         jscpConhecidos = new javax.swing.JScrollPane();
         jtConhecidos = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        btnInserirTabConhecido = new javax.swing.JButton();
+        btnAlterarConhecido = new javax.swing.JButton();
+        btnDeletar1 = new javax.swing.JButton();
         jpContatos = new javax.swing.JPanel();
-        jscpContatos = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        btnInserirContato = new javax.swing.JButton();
+        btnAlterar = new javax.swing.JButton();
+        btnDeletar = new javax.swing.JButton();
+        jscpContatos1 = new javax.swing.JScrollPane();
         jtContatos = new javax.swing.JTable();
+        pnlGerenciaConh = new javax.swing.JPanel();
+        lblNomeConh = new javax.swing.JLabel();
+        lblNomeConh1 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        btnInserirTabGerConh = new javax.swing.JButton();
+        btnAlterarTabGerConh = new javax.swing.JButton();
+        jcbReferencias = new javax.swing.JComboBox<>();
+        txfNomeConh = new javax.swing.JTextField();
+        pnlGerenciaCont = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jcbTipos = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        txfContato = new javax.swing.JTextField();
+        jPanel6 = new javax.swing.JPanel();
+        btnInserirTabGerCont = new javax.swing.JButton();
+        btnAlterarTabCont = new javax.swing.JButton();
+        txfConhTabGerenciaCont = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jtpAbas.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtpAbasFocusGained(evt);
+            }
+        });
 
         jtConhecidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -64,6 +126,51 @@ public class AgendaGUI extends javax.swing.JFrame {
         ));
         jscpConhecidos.setViewportView(jtConhecidos);
 
+        btnInserirTabConhecido.setText("Inserir");
+        btnInserirTabConhecido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInserirTabConhecidoActionPerformed(evt);
+            }
+        });
+
+        btnAlterarConhecido.setText("Alterar");
+        btnAlterarConhecido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarConhecidoActionPerformed(evt);
+            }
+        });
+
+        btnDeletar1.setText("Deletar");
+        btnDeletar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletar1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnInserirTabConhecido)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAlterarConhecido)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnDeletar1)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnInserirTabConhecido)
+                    .addComponent(btnAlterarConhecido)
+                    .addComponent(btnDeletar1))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jpConhecidosLayout = new javax.swing.GroupLayout(jpConhecidos);
         jpConhecidos.setLayout(jpConhecidosLayout);
         jpConhecidosLayout.setHorizontalGroup(
@@ -71,16 +178,67 @@ public class AgendaGUI extends javax.swing.JFrame {
             .addGroup(jpConhecidosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jscpConhecidos, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE))
+            .addGroup(jpConhecidosLayout.createSequentialGroup()
+                .addGap(121, 121, 121)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jpConhecidosLayout.setVerticalGroup(
             jpConhecidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpConhecidosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jscpConhecidos, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jtpAbas.addTab("Conhecido", jpConhecidos);
+
+        btnInserirContato.setText("Inserir ");
+        btnInserirContato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInserirContatoActionPerformed(evt);
+            }
+        });
+
+        btnAlterar.setText("Alterar");
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarActionPerformed(evt);
+            }
+        });
+
+        btnDeletar.setText("Deletar");
+        btnDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnInserirContato)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAlterar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnDeletar)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnInserirContato)
+                    .addComponent(btnAlterar)
+                    .addComponent(btnDeletar))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
 
         jtContatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -98,25 +256,218 @@ public class AgendaGUI extends javax.swing.JFrame {
                 jtContatosFocusGained(evt);
             }
         });
-        jscpContatos.setViewportView(jtContatos);
+        jscpContatos1.setViewportView(jtContatos);
 
         javax.swing.GroupLayout jpContatosLayout = new javax.swing.GroupLayout(jpContatos);
         jpContatos.setLayout(jpContatosLayout);
         jpContatosLayout.setHorizontalGroup(
             jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpContatosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jscpContatos, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE))
+                .addGap(121, 121, 121)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpContatosLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jscpContatos1, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         jpContatosLayout.setVerticalGroup(
             jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpContatosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jscpContatos, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(266, 266, 266)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
+            .addGroup(jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpContatosLayout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addComponent(jscpContatos1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(134, Short.MAX_VALUE)))
         );
 
         jtpAbas.addTab("Contato", jpContatos);
+
+        pnlGerenciaConh.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pnlGerenciaConhFocusGained(evt);
+            }
+        });
+
+        lblNomeConh.setText("Nome");
+
+        lblNomeConh1.setText("Referencia");
+
+        btnInserirTabGerConh.setText("Inserir");
+        btnInserirTabGerConh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInserirTabGerConhActionPerformed(evt);
+            }
+        });
+
+        btnAlterarTabGerConh.setText("Alterar");
+        btnAlterarTabGerConh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarTabGerConhActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnInserirTabGerConh, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(btnAlterarTabGerConh, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnInserirTabGerConh)
+                    .addComponent(btnAlterarTabGerConh))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+
+        jcbReferencias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout pnlGerenciaConhLayout = new javax.swing.GroupLayout(pnlGerenciaConh);
+        pnlGerenciaConh.setLayout(pnlGerenciaConhLayout);
+        pnlGerenciaConhLayout.setHorizontalGroup(
+            pnlGerenciaConhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGerenciaConhLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlGerenciaConhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNomeConh1)
+                    .addComponent(lblNomeConh))
+                .addGap(18, 18, 18)
+                .addGroup(pnlGerenciaConhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbReferencias, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txfNomeConh, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlGerenciaConhLayout.setVerticalGroup(
+            pnlGerenciaConhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGerenciaConhLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(pnlGerenciaConhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNomeConh)
+                    .addComponent(txfNomeConh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlGerenciaConhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNomeConh1)
+                    .addComponent(jcbReferencias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(172, Short.MAX_VALUE))
+        );
+
+        jtpAbas.addTab("Gerencia Conh", pnlGerenciaConh);
+
+        pnlGerenciaCont.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pnlGerenciaContFocusGained(evt);
+            }
+        });
+
+        jLabel1.setText("Conhecido");
+
+        jLabel2.setText("TIpo");
+
+        jcbTipos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcbTipos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jcbTiposItemStateChanged(evt);
+            }
+        });
+        jcbTipos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbTiposActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Contato");
+
+        btnInserirTabGerCont.setText("Inserir");
+        btnInserirTabGerCont.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInserirTabGerContActionPerformed(evt);
+            }
+        });
+
+        btnAlterarTabCont.setText("Alterar");
+        btnAlterarTabCont.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarTabContActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnInserirTabGerCont, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAlterarTabCont, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnInserirTabGerCont)
+                    .addComponent(btnAlterarTabCont))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout pnlGerenciaContLayout = new javax.swing.GroupLayout(pnlGerenciaCont);
+        pnlGerenciaCont.setLayout(pnlGerenciaContLayout);
+        pnlGerenciaContLayout.setHorizontalGroup(
+            pnlGerenciaContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGerenciaContLayout.createSequentialGroup()
+                .addGroup(pnlGerenciaContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(pnlGerenciaContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txfContato, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbTipos, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txfConhTabGerenciaCont, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(pnlGerenciaContLayout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(175, Short.MAX_VALUE))
+        );
+        pnlGerenciaContLayout.setVerticalGroup(
+            pnlGerenciaContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGerenciaContLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(pnlGerenciaContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txfConhTabGerenciaCont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlGerenciaContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jcbTipos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlGerenciaContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txfContato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(144, Short.MAX_VALUE))
+        );
+
+        jtpAbas.addTab("Gerencia Cont", pnlGerenciaCont);
 
         javax.swing.GroupLayout jpPrincipalLayout = new javax.swing.GroupLayout(jpPrincipal);
         jpPrincipal.setLayout(jpPrincipalLayout);
@@ -128,7 +479,7 @@ public class AgendaGUI extends javax.swing.JFrame {
         );
         jpPrincipalLayout.setVerticalGroup(
             jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpPrincipalLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jtpAbas)
                 .addContainerGap())
@@ -154,21 +505,30 @@ public class AgendaGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnInserirTabConhecidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirTabConhecidoActionPerformed
+//        ao apertar inserir mudamos para tela de gerenciamento de conhecidos
+        jtpAbas.setSelectedIndex(2);
+        btnAlterarTabGerConh.setVisible(false);
+        btnInserirTabGerConh.setVisible(true);
+    }//GEN-LAST:event_btnInserirTabConhecidoActionPerformed
+
     private void jtContatosFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtContatosFocusGained
         int selecionado = jtConhecidos.getSelectedRow();
         if (selecionado >= 0) {
             String idString = (String) jtConhecidos.getValueAt(
                     selecionado, 0);
             int id = Integer.parseInt(idString);
-            String[] camposContato = {"Tipo", "Contato"};
+            String[] camposContato = {"Id", "Tipo", "Contato"};
             List<Contato> contatos
                     = ContatoDAO.selecionarPorConhecido(id);
-            String[][] dadosContatos = new String[contatos.size()][2];
+            String[][] dadosContatos = new String[contatos.size()][3];
             int posicao = 0;
             for (Contato cont : contatos) {
-                String[] umContato = new String[2];
-                umContato[0] = cont.getTipo().getTipoContato();
-                umContato[1] = cont.getIdentificacao();
+                int contatoID = cont.getId();
+                String[] umContato = new String[3];
+                umContato[0] = String.valueOf(contatoID);
+                umContato[1] = cont.getTipo().getTipoContato();
+                umContato[2] = cont.getIdentificacao();
                 dadosContatos[posicao++] = umContato;
             }
             DefaultTableModel modelo = new DefaultTableModel(
@@ -178,6 +538,198 @@ public class AgendaGUI extends javax.swing.JFrame {
             jtpAbas.setSelectedIndex(0);
         }
     }//GEN-LAST:event_jtContatosFocusGained
+
+    private void btnInserirTabGerConhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirTabGerConhActionPerformed
+        String nome = txfNomeConh.getText();
+        if (!nome.isEmpty()) {
+            String referencia = jcbReferencias.getSelectedItem().toString();
+            Conhecido conhecidoInserir = new Conhecido(nome, 
+                    Referencia.getReferenciaPorNome(referencia));
+            ConhecidoDAO.inserir(conhecidoInserir);
+            mostraRegistros();
+        } else {
+            Base.mensagemDeErro("O nome não pode ser vazio");
+        }
+        mostraRegistros();
+    }//GEN-LAST:event_btnInserirTabGerConhActionPerformed
+
+    private void btnDeletar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletar1ActionPerformed
+        int selecionado = jtConhecidos.getSelectedRow();
+        String idString = (String) jtConhecidos.getValueAt(selecionado, 0);
+        int idConhecido = Integer.parseInt(idString);
+        String nomeConhecido = (String) jtConhecidos.getValueAt(selecionado, 1);
+        String referenciaString = (String) jtConhecidos.getValueAt(selecionado,
+                2);
+        Conhecido conhecidoADeletar = new Conhecido(idConhecido, nomeConhecido,
+                Referencia.getReferenciaPorNome(referenciaString));
+        ConhecidoDAO.apagar(conhecidoADeletar);
+        mostraRegistros();
+        
+        
+    }//GEN-LAST:event_btnDeletar1ActionPerformed
+
+    private void btnAlterarConhecidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarConhecidoActionPerformed
+        jtpAbas.setSelectedIndex(2);
+        pnlGerenciaConh.setFocusable(true);
+        pnlGerenciaConh.requestFocusInWindow();
+        btnAlterarTabGerConh.setVisible(true);
+        btnInserirTabGerConh.setVisible(false);
+    }//GEN-LAST:event_btnAlterarConhecidoActionPerformed
+
+    private void jcbTiposItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbTiposItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcbTiposItemStateChanged
+
+    private void jcbTiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbTiposActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcbTiposActionPerformed
+
+    private void jtpAbasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtpAbasFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtpAbasFocusGained
+
+    private void btnAlterarTabGerConhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarTabGerConhActionPerformed
+        // TODO add your handling code here:
+        int selecionado = jtConhecidos.getSelectedRow();
+        String idString = (String) jtConhecidos.getValueAt(selecionado, 0);
+        int idConhecido = Integer.parseInt(idString);
+        String nomeConhecido = txfNomeConh.getText();
+        String referencia = jcbReferencias.getSelectedItem().toString();
+        Conhecido conhecidoASerAlterado = new Conhecido(idConhecido,
+                nomeConhecido, Referencia.getReferenciaPorNome(referencia));
+        ConhecidoDAO.alterar(conhecidoASerAlterado);
+        mostraRegistros();
+    }//GEN-LAST:event_btnAlterarTabGerConhActionPerformed
+
+    private void btnInserirContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirContatoActionPerformed
+        jtpAbas.setSelectedIndex(3);
+        pnlGerenciaCont.setFocusable(true);
+        pnlGerenciaCont.requestFocusInWindow();
+        btnInserirTabGerCont.setVisible(true);
+        btnAlterarTabCont.setVisible(false);
+        
+    }//GEN-LAST:event_btnInserirContatoActionPerformed
+
+    private void pnlGerenciaConhFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pnlGerenciaConhFocusGained
+        int selecionado = jtConhecidos.getSelectedRow();
+        String nomeConhecido = (String) jtConhecidos.getValueAt(selecionado, 1);
+        String referencia = (String) jtConhecidos.getValueAt(selecionado, 2);
+        txfNomeConh.setText(nomeConhecido);
+        int size = jcbReferencias.getItemCount();
+        for (int i = 0; i < size; i++){
+            if (referencia.equalsIgnoreCase(jcbReferencias.getItemAt(i))){
+                jcbReferencias.setSelectedIndex(i);
+            }
+        }
+    }//GEN-LAST:event_pnlGerenciaConhFocusGained
+
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
+        jtpAbas.setSelectedIndex(3);
+        pnlGerenciaCont.setFocusable(true);
+        pnlGerenciaCont.requestFocusInWindow();
+        btnAlterarTabCont.setVisible(true);
+        btnInserirTabGerCont.setVisible(false);
+    }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void pnlGerenciaContFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pnlGerenciaContFocusGained
+//        Colocando o nome do conhecido na tela de gerenciamento de ctt
+        int selecionadoConhecido = jtConhecidos.getSelectedRow();
+        String nomeConhecido = (String) jtConhecidos.getValueAt(selecionadoConhecido, 1);
+        txfConhTabGerenciaCont.setText(nomeConhecido);
+        
+//        populando os campos contato e tipo com as infos selecionadas 
+//        da tela de contato
+        int selecionadoContato = jtContatos.getSelectedRow();
+        String contato = (String) jtContatos.getValueAt(selecionadoContato, 2);
+        txfContato.setText(contato);
+        
+        String tipo = (String) jtContatos.getValueAt(selecionadoContato, 1);
+        int size = jcbTipos.getItemCount();
+        for (int i = 0; i < size; i++){
+            if (tipo.equalsIgnoreCase(jcbTipos.getItemAt(i))){
+                jcbTipos.setSelectedIndex(i);
+            }
+        }
+    }//GEN-LAST:event_pnlGerenciaContFocusGained
+
+    private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
+//        Instanciando o conhecido com os dados do item selecionado na primeira tela
+        int selecionadoConhecido = jtConhecidos.getSelectedRow();
+        String idString = (String) jtConhecidos.getValueAt(
+                selecionadoConhecido, 0);
+        int idConhecido = Integer.parseInt(idString);
+        String nomeConhecido = (String)
+                jtConhecidos.getValueAt(selecionadoConhecido, 1);
+        String referencia = (String) jtConhecidos.getValueAt(
+                selecionadoConhecido, 2);
+        Conhecido conhecidoASerRemovido = new Conhecido(idConhecido,
+                nomeConhecido, Referencia.getReferenciaPorNome(referencia));
+        
+//        Istanciando o contato a ser removido pegando os dados selecionado da tabela
+        int selecionadoContato = jtContatos.getSelectedRow();
+        String idContatoString = (String) jtContatos.getValueAt(selecionadoContato, 0);
+        int idContatoInt = Integer.parseInt(idContatoString);
+        String tipo = (String) jtContatos.getValueAt(selecionadoContato, 1);
+        String contato = (String) jtContatos.getValueAt(selecionadoContato, 2);
+        
+        Contato contatoASerRemovido = new Contato(idContatoInt, conhecidoASerRemovido, 
+                TipoContato.getTipoContatoPorNome(tipo), contato);
+//        removendo com a classe dao
+        ContatoDAO.apagar(contatoASerRemovido);
+        jtContatos.setFocusable(true);
+        jtContatos.requestFocusInWindow();
+    }//GEN-LAST:event_btnDeletarActionPerformed
+
+    private void btnInserirTabGerContActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirTabGerContActionPerformed
+//        Instanciando o conhecido com os dados do item selecionado na primeira tela
+//        para entao criarmos um novo contato 
+        int selecionadoConhecido = jtConhecidos.getSelectedRow();
+        String idString = (String) jtConhecidos.getValueAt(
+                selecionadoConhecido, 0);
+        int idConhecido = Integer.parseInt(idString);
+        String nomeConhecido = (String)
+                jtConhecidos.getValueAt(selecionadoConhecido, 1);
+        String referencia = (String) jtConhecidos.getValueAt(
+                selecionadoConhecido, 2);
+        Conhecido conhecidoASerAlterado = new Conhecido(idConhecido,
+                nomeConhecido, Referencia.getReferenciaPorNome(referencia));
+        
+//        Istanciando o contato a ser inserido
+        String tipo = (String) jcbTipos.getSelectedItem().toString();
+        String contato = txfContato.getText();
+        Contato contatoASerInserido = new Contato(conhecidoASerAlterado,
+                TipoContato.getTipoContatoPorNome(tipo), contato);
+//        Inserindo contato no BD com a classe dao
+        ContatoDAO.inserir(contatoASerInserido);    
+    }//GEN-LAST:event_btnInserirTabGerContActionPerformed
+
+    private void btnAlterarTabContActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarTabContActionPerformed
+//        Instanciando o conhecido com os dados do item selecionado na primeira tela
+//        para entao criarmos um novo contato 
+        int selecionadoConhecido = jtConhecidos.getSelectedRow();
+        String idString = (String) jtConhecidos.getValueAt(
+                selecionadoConhecido, 0);
+        int idConhecido = Integer.parseInt(idString);
+        String nomeConhecido = (String)
+                jtConhecidos.getValueAt(selecionadoConhecido, 1);
+        String referencia = (String) jtConhecidos.getValueAt(
+                selecionadoConhecido, 2);
+        Conhecido conhecidoASerAlterado = new Conhecido(idConhecido,
+                nomeConhecido, Referencia.getReferenciaPorNome(referencia));
+        
+//        Istanciando o contato a ser removido pegando os dados selecionado da tabela
+        int selecionadoContato = jtContatos.getSelectedRow();
+        String idContatoString = (String) jtContatos.getValueAt(selecionadoContato, 0);
+        int idContatoInt = Integer.parseInt(idContatoString);
+        String tipo = jcbTipos.getSelectedItem().toString();
+        String contato = txfContato.getText();
+        
+        Contato contatoASerAlterado = new Contato(idContatoInt, conhecidoASerAlterado, 
+                TipoContato.getTipoContatoPorNome(tipo), contato);
+        
+//        Inserindo contato no BD com a classe dao
+        ContatoDAO.alterar(contatoASerAlterado);
+    }//GEN-LAST:event_btnAlterarTabContActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,13 +767,39 @@ public class AgendaGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAlterar;
+    private javax.swing.JButton btnAlterarConhecido;
+    private javax.swing.JButton btnAlterarTabCont;
+    private javax.swing.JButton btnAlterarTabGerConh;
+    private javax.swing.JButton btnDeletar;
+    private javax.swing.JButton btnDeletar1;
+    private javax.swing.JButton btnInserirContato;
+    private javax.swing.JButton btnInserirTabConhecido;
+    private javax.swing.JButton btnInserirTabGerConh;
+    private javax.swing.JButton btnInserirTabGerCont;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JComboBox<String> jcbReferencias;
+    private javax.swing.JComboBox<String> jcbTipos;
     private javax.swing.JPanel jpConhecidos;
     private javax.swing.JPanel jpContatos;
     private javax.swing.JPanel jpPrincipal;
     private javax.swing.JScrollPane jscpConhecidos;
-    private javax.swing.JScrollPane jscpContatos;
+    private javax.swing.JScrollPane jscpContatos1;
     private javax.swing.JTable jtConhecidos;
     private javax.swing.JTable jtContatos;
     private javax.swing.JTabbedPane jtpAbas;
+    private javax.swing.JLabel lblNomeConh;
+    private javax.swing.JLabel lblNomeConh1;
+    private javax.swing.JPanel pnlGerenciaConh;
+    private javax.swing.JPanel pnlGerenciaCont;
+    private javax.swing.JTextField txfConhTabGerenciaCont;
+    private javax.swing.JTextField txfContato;
+    private javax.swing.JTextField txfNomeConh;
     // End of variables declaration//GEN-END:variables
 }

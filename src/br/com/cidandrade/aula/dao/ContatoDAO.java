@@ -1,5 +1,6 @@
 package br.com.cidandrade.aula.dao;
 
+import br.com.cidandrade.aula.Base;
 import br.com.cidandrade.aula.bd.OperacaoBD;
 import br.com.cidandrade.aula.entidade.Conhecido;
 import br.com.cidandrade.aula.entidade.Contato;
@@ -25,25 +26,35 @@ public class ContatoDAO {
             + "from contato where idConhecido = %d";
 
     public static void inserir(Contato contato) {
-        String sql = String.format(INSERT_SQL,
-                contato.getConhecido().getId(),
-                contato.getTipo().getTipoContato(),
-                contato.getIdentificacao());
-        OperacaoBD.execute(sql, true);
+        String identificacao = contato.getIdentificacao();
+        if (!identificacao.isEmpty()) {
+            String sql = String.format(INSERT_SQL,
+                    contato.getConhecido().getId(),
+                    identificacao,
+                    contato.getIdentificacao());
+            OperacaoBD.execute(sql, true, "Inserido com sucesso");
+        } else {
+            Base.mensagemDeErro("O campo não pode ser nulo");
+        }
     }
 
     public static void alterar(Contato contato) {
-        String sql = String.format(UPDATE_SQL,
-                contato.getTipo().getTipoContato(),
-                contato.getIdentificacao(),
-                contato.getId());
-        OperacaoBD.execute(sql, true);
+        String identificacao = contato.getIdentificacao();
+        if (!identificacao.isEmpty()) {
+            String sql = String.format(UPDATE_SQL,
+                    contato.getTipo().getTipoContato(),
+                    identificacao,
+                    contato.getId());
+            OperacaoBD.execute(sql, true, "Alterado com sucesso");
+        } else {
+            Base.mensagemDeErro("O campo não pode ser nulo");
+        }
     }
 
     public static void apagar(Contato contato) {
         String sql = String.format(DELETE_SQL,
                 contato.getId());
-        OperacaoBD.execute(sql, true);
+        OperacaoBD.execute(sql, true, "Removido com sucesso");
     }
 
     public static List<Contato> selecionarTodos() {
