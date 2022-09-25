@@ -65,7 +65,7 @@ Para remover um conhecido, todos os seus contatos devem ter sido removidos anter
 
 ## Tabela Contato
 - ### Inserindo novo contato
-Para inserir um novo contato, primeiro deve-se selecionar o conhecido em que deseja adicionar o contato, na primeira tela, então alterar a tela para contato e então selecionar o botão inserir. O mesmo conceito será utilizado para alteração e remoção.
+Para inserir um novo contato, primeiro deve-se selecionar o conhecido em que deseja adicionar o contato, na primeira tela, então alterar a tela para contato e então selecionar o botão inserir. O mesmo conceito será utilizado para alteração e remoção.<br>
 ![Gif demonstrando a inserção de um novo contato na tabela](./readmeImgs/contato/inserindoContato.gif)
 <br>
 
