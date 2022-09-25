@@ -30,8 +30,8 @@ public class ContatoDAO {
         if (!identificacao.isEmpty()) {
             String sql = String.format(INSERT_SQL,
                     contato.getConhecido().getId(),
-                    identificacao,
-                    contato.getIdentificacao());
+                    contato.getTipo(),
+                    identificacao);
             OperacaoBD.execute(sql, true, "Inserido com sucesso");
         } else {
             Base.mensagemDeErro("O campo não pode ser nulo");

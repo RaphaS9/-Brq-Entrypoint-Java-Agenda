@@ -19,7 +19,7 @@ public class AgendaGUI extends javax.swing.JFrame {
      */
     public AgendaGUI() {
         initComponents();
-        InicializaBD.inicializarBD();
+//        InicializaBD.inicializarBD();
         populaCombos();
         mostraRegistros();
         btnAlterarTabGerConh.setVisible(false);
