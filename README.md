@@ -7,7 +7,7 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
 - <a href="#instalacao">Instalação</a>
 - <a href="#configuracao">Configuração</a>
 - <a href="#demoPrograma">Demonstração do Programa</a> 
-- -- teste -- a
+- -- teste
 
 
 <div id="descProjeto"> 
