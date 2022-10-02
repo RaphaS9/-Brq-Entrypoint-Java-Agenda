@@ -3,10 +3,10 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
 ## <a href="https://drive.google.com/file/d/1S-v5-aNZMSCWquK5FhN2VlZAyzqn0FA3/view)" taget="_blank">link da aula</a>
 
 # Sumário
-<br> <a href="#descProjeto">Descrição do Projeto</a>
-<br> <a href="#instalacao">Instalação</a>
-<br> <a href="#demoPrograma">Configuração</a>
-<br> <a href="#demoPrograma">Demonstração do Programa</a>
+- <a href="#descProjeto">Descrição do Projeto</a>
+- <a href="#instalacao">Instalação</a>
+- <a href="#configuracao">Configuração</a>
+- <a href="#demoPrograma">Demonstração do Programa</a>
 
 
 <div id="descProjeto"> 
