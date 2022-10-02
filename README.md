@@ -67,7 +67,7 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
    <div id="tabelaConhecido">
      <h1> Tabela Conhecido </h1>
    </div> 
-     - ### Inserindo Conhecido
+- ### Inserindo Conhecido
      ![Gif demonstrando a inserção de um novo conhecido na tabela](./readmeImgs/conhecido/inserindoConhecido.gif)
      <br>
 
