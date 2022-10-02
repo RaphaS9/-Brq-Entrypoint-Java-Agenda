@@ -24,6 +24,7 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
 
 <div id="instalacao">
   <h1>Instalação</h1>
+  
   ## Primeiro passo: Instalar Java JDK 17
   <br>
 
@@ -36,7 +37,7 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
 </div>
 
 <div id="configuracao">
-  <h1>Configuração<h1>
+  <h1>Configuração</h1>
 
   ## IDE
   Neste projeto utilizei a IDE netbeans, para o programa rodar algumas configurações iniciais são necessárias:
