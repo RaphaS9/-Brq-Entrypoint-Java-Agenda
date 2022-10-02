@@ -8,7 +8,7 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
 3. <a href="#configuracao">Configuração</a>
 4. <a href="#demoPrograma">Demonstração do Programa</a>
    - <a href="#tabelaConhecido"> Tabela Conhecido </a>
-   - <a href="#tabelaContato"> Tabela Contato </a>
+   - [Va a tabela contato](#tabela-contato)
 
 <div id="descProjeto"> 
   <h1> Descricao do Projeto </h1>
@@ -78,7 +78,7 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
    ![Gif demonstrando a remoção de um conhecido na tabela](./readmeImgs/conhecido/deletandoConhecido.gif)
    <br><br>
    
-   ##teste Tabela Contato
+   ## Tabela Contato
    - ### Inserindo novo contato
    Para inserir um novo contato, primeiro deve-se selecionar o conhecido em que deseja adicionar o contato, na primeira tela, então alterar a tela para contato e          então selecionar o botão inserir. O mesmo conceito será utilizado para alteração e remoção.<br><br>
    ![Gif demonstrando a inserção de um novo contato na tabela](./readmeImgs/contato/inserindoContato.gif)
