@@ -47,7 +47,7 @@ No meu caso fiz através da IDE (novamento o erro se dá já estar criado):
 <br><br>
 
 <div id="demoPrograma">
-  ## Demonstração do Programa
+  <h1> Demonstração do Programa </h1>
   A seguir alguns gifs com a demonstração do funcionamento pleno do programa para referência.
 
   ## Tabela Conhecido
