@@ -87,9 +87,7 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
    - ### Alterando novo contato
    ![Gif demonstrando a alteração de um contato na tabela](./readmeImgs/contato/alterandoContato.gif)
    <br>
-<div>
-   aaa
-- ### Removendo novo contato
-![Gif demonstrando a remoção de um novo contato na tabela](./readmeImgs/contato/deletandoContato.gif)
-</div>
+   
+   - ### Removendo novo contato
+   ![Gif demonstrando a remoção de um novo contato na tabela](./readmeImgs/contato/deletandoContato.gif)
    </div>
