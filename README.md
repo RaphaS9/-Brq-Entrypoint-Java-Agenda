@@ -66,7 +66,7 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
    
    <div id="tabelaConhecido">
      <h1> Tabela Conhecido </h1>
-        
+   </div> 
      - ### Inserindo Conhecido
      ![Gif demonstrando a inserção de um novo conhecido na tabela](./readmeImgs/conhecido/inserindoConhecido.gif)
      <br>
@@ -79,7 +79,7 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
      Para remover um conhecido, todos os seus contatos devem ter sido removidos anteriormente, ou seja ele não pode ter nenhum contato salvo ou um erro será                  apresentado.<br><br>
      ![Gif demonstrando a remoção de um conhecido na tabela](./readmeImgs/conhecido/deletandoConhecido.gif)
      <br><br>
-   </div>
+
    
    <div id="tabelaContato">
      ## Tabela Contato
