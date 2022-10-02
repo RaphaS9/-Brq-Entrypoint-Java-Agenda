@@ -7,8 +7,8 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
 2. <a href="#instalacao">Instalação</a>
 3. <a href="#configuracao">Configuração</a>
 4. <a href="#demoPrograma">Demonstração do Programa</a>
-   - <a href="tabelaConhecido"> Tabela Conhecido </a>
-   - <a href="tabelaContato"> Tabela Contato </a>
+   - <a href="#tabelaConhecido"> Tabela Conhecido </a>
+   - <a href="#tabelaContato"> Tabela Contato </a>
 
 <div id="descProjeto"> 
   <h1> Descricao do Projeto </h1>
