@@ -64,23 +64,20 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
   <h1> Demonstração do Programa </h1>
   A seguir alguns gifs com a demonstração do funcionamento pleno do programa para referência.
    
-   <div id="tabelaConhecido">
-     <h1> Tabela Conhecido </h1>
-   </div> 
-- ### Inserindo Conhecido
-     ![Gif demonstrando a inserção de um novo conhecido na tabela](./readmeImgs/conhecido/inserindoConhecido.gif)
-     <br>
-
-     - ### Alterando Conhecido
-     ![Gif demonstrando a alteraão de um conhecido na tabela](./readmeImgs/conhecido/alterandoConhecido.gif)
-     <br>
-
-     - ### Removendo Conhecido
-     Para remover um conhecido, todos os seus contatos devem ter sido removidos anteriormente, ou seja ele não pode ter nenhum contato salvo ou um erro será                  apresentado.<br><br>
-     ![Gif demonstrando a remoção de um conhecido na tabela](./readmeImgs/conhecido/deletandoConhecido.gif)
-     <br><br>
-
+   # Tabela Conhecido
+   - ### Inserindo Conhecido
+   ![Gif demonstrando a inserção de um novo conhecido na tabela](./readmeImgs/conhecido/inserindoConhecido.gif)
+   <br>
    
+   - ### Alterando Conhecido
+   ![Gif demonstrando a alteraão de um conhecido na tabela](./readmeImgs/conhecido/alterandoConhecido.gif)
+   <br>
+   
+   - ### Removendo Conhecido
+   Para remover um conhecido, todos os seus contatos devem ter sido removidos anteriormente, ou seja ele não pode ter nenhum contato salvo ou um erro será                  apresentado.<br><br>
+   ![Gif demonstrando a remoção de um conhecido na tabela](./readmeImgs/conhecido/deletandoConhecido.gif)
+   <br><br>
+
    <div id="tabelaContato">
      ## Tabela Contato
      - ### Inserindo novo contato
