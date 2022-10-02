@@ -1,50 +1,62 @@
 ## Exercício do curso entrypoint JAVA da Brq, professor Cid Andrade.
 Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch (professor) está o código do professor que recebemos para alterá-lo.<br>
 ## <a href="https://drive.google.com/file/d/1S-v5-aNZMSCWquK5FhN2VlZAyzqn0FA3/view)" taget="_blank">link da aula</a>
-<br> <a href="#demoPrograma">Demo</a>
 
-# Descricao do Projeto
-O projeto consiste numa agenda de contatos, onde temos uma tabela para os nossos conhecidos e uma tabela onde os contatos destes conhecidos ficam armazenados. E oferece a possibilidade de gerenciar os dados de ambas as tabelas
-
-O programa foi feito em java utilizando sua interface gráfica e conexão ao banco de dados mySql. 
-Alguns conceitos utilizados: 
-- Vetores multidimensionais ([tutorial loaine groner](https://www.youtube.com/watch?v=P66G0rxdL-k))
-- CRUD completo através de classes DAO
-- ENUMS
-- Alteraçao de foco/visibilidade em elementos da interface gráfica
-<br>
-
-# Instalação
-## Primeiro passo: Instalar Java JDK 17
-<br>
-
-## Segundo passo: Instalar mySql
-Para utilizar o banco de dados será necessário ter o mysql e o conector java instalado.
-Após a instalação, seu instalador do mysql deverá estar assim: 
-
-![Mysql installer](./readmeImgs/instalacaoMysql.PNG)
-<br><br>
-
-# Configuração
-
-## IDE
-Neste projeto utilizei a IDE netbeans, para o programa rodar algumas configurações iniciais são necessárias:
-
-- **Adicionar o conector java do mysql a IDE.**<br>
-Para isto você precisará deste caminho do conector (que foi instaldo junto do mysql) e seguir os passos do gif (no meu caso deu um erro pois já estava adicionado). <br>
-Caminho do conector: C:\Program Files (x86)\MySQL\Connector J 8.0\mysql-connector-java-8.0.30.jar
-
-![Adicionado conector J ao netebeans](./readmeImgs/configNetbeans/adicionadoConectorJ.gif)
+# Sumário
+<br> <a href="#descProjeto">Descrição do Projeto</a>
+<br> <a href="#instalacao">Instalação</a>
+<br> <a href="#demoPrograma">Configuração</a>
+<br> <a href="#demoPrograma">Demonstração do Programa</a>
 
 
-- **Criar o database utilizado no projeto.**<br>
-Primeiro passo que precisamos para começar o projeto é a criação do banco de dados.<br>
-Para isto, podemos utilizar o workbench do mysql, o prompt de comando ou a própria IDE. Através do comando:<br>
-*Create database agenda;*<br>
-No meu caso fiz através da IDE (novamento o erro se dá já estar criado):
+<div id="descProjeto"> 
+  <h1> Descricao do Projeto </h1>
+  O projeto consiste numa agenda de contatos, onde temos uma tabela para os nossos conhecidos e uma tabela onde os contatos destes conhecidos ficam armazenados. E oferece a possibilidade de gerenciar os dados de ambas as tabelas
 
-![Criando database pelo netbeans](./readmeImgs/configNetbeans/criandoDB.gif)
-<br><br>
+  O programa foi feito em java utilizando sua interface gráfica e conexão ao banco de dados mySql. 
+  Alguns conceitos utilizados: 
+  - Vetores multidimensionais ([tutorial loaine groner](https://www.youtube.com/watch?v=P66G0rxdL-k))
+  - CRUD completo através de classes DAO
+  - ENUMS
+  - Alteraçao de foco/visibilidade em elementos da interface gráfica
+  <br>
+</div>
+
+<div id="instalacao">
+  <h1>Instalação</h1>
+  ## Primeiro passo: Instalar Java JDK 17
+  <br>
+
+  ## Segundo passo: Instalar mySql
+  Para utilizar o banco de dados será necessário ter o mysql e o conector java instalado.
+  Após a instalação, seu instalador do mysql deverá estar assim: 
+
+  ![Mysql installer](./readmeImgs/instalacaoMysql.PNG)
+  <br><br>
+</div>
+
+<div id="configuracao">
+  <h1>Configuração<h1>
+
+  ## IDE
+  Neste projeto utilizei a IDE netbeans, para o programa rodar algumas configurações iniciais são necessárias:
+
+  - **Adicionar o conector java do mysql a IDE.**<br>
+  Para isto você precisará deste caminho do conector (que foi instaldo junto do mysql) e seguir os passos do gif (no meu caso deu um erro pois já estava adicionado). <br>
+  Caminho do conector: C:\Program Files (x86)\MySQL\Connector J 8.0\mysql-connector-java-8.0.30.jar
+
+  ![Adicionado conector J ao netebeans](./readmeImgs/configNetbeans/adicionadoConectorJ.gif)
+
+
+  - **Criar o database utilizado no projeto.**<br>
+  Primeiro passo que precisamos para começar o projeto é a criação do banco de dados.<br>
+  Para isto, podemos utilizar o workbench do mysql, o prompt de comando ou a própria IDE. Através do comando:<br>
+  *Create database agenda;*<br>
+  No meu caso fiz através da IDE (novamento o erro se dá já estar criado):
+
+  ![Criando database pelo netbeans](./readmeImgs/configNetbeans/criandoDB.gif)
+  <br><br>
+</div>
 
 <div id="demoPrograma">
   <h1> Demonstração do Programa </h1>
