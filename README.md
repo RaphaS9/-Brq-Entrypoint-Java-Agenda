@@ -33,7 +33,7 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
   Para utilizar o banco de dados será necessário ter o mysql e o conector java instalado.
   Após a instalação, seu instalador do mysql deverá estar assim: 
 
-  ![Mysql installer](./readmeImgs/instalacaoMysql.PNG)
+  ![Mysql installer](./readmeImgs/instMysql.png)
   <br><br>
 </div>
 
