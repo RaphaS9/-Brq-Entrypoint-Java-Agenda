@@ -1,6 +1,7 @@
 ## Exercício do curso entrypoint JAVA da Brq, professor Cid Andrade.
 Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch (professor) está o código do professor que recebemos para alterá-lo.<br>
 ## <a href="https://drive.google.com/file/d/1S-v5-aNZMSCWquK5FhN2VlZAyzqn0FA3/view)" taget="_blank">link da aula</a>
+<br> <a href="#demoPrograma">Demo</a>
 
 # Descricao do Projeto
 O projeto consiste numa agenda de contatos, onde temos uma tabela para os nossos conhecidos e uma tabela onde os contatos destes conhecidos ficam armazenados. E oferece a possibilidade de gerenciar os dados de ambas as tabelas
@@ -45,33 +46,34 @@ No meu caso fiz através da IDE (novamento o erro se dá já estar criado):
 ![Criando database pelo netbeans](./readmeImgs/configNetbeans/criandoDB.gif)
 <br><br>
 
+<div id="demoPrograma">
+  # Demonstração do Programa
+  A seguir alguns gifs com a demonstração do funcionamento pleno do programa para referência.
 
-# Demonstração do Programa
-A seguir alguns gifs com a demonstração do funcionamento pleno do programa para referência.
+  ## Tabela Conhecido
+  - ### Inserindo Conhecido
+  ![Gif demonstrando a inserção de um novo conhecido na tabela](./readmeImgs/conhecido/inserindoConhecido.gif)
+  <br>
 
-## Tabela Conhecido
-- ### Inserindo Conhecido
-![Gif demonstrando a inserção de um novo conhecido na tabela](./readmeImgs/conhecido/inserindoConhecido.gif)
-<br>
+  - ### Alterando Conhecido
+  ![Gif demonstrando a alteraão de um conhecido na tabela](./readmeImgs/conhecido/alterandoConhecido.gif)
+  <br>
 
-- ### Alterando Conhecido
-![Gif demonstrando a alteraão de um conhecido na tabela](./readmeImgs/conhecido/alterandoConhecido.gif)
-<br>
+  - ### Removendo Conhecido
+  Para remover um conhecido, todos os seus contatos devem ter sido removidos anteriormente, ou seja ele não pode ter nenhum contato salvo ou um erro será apresentado.<br><br>
+  ![Gif demonstrando a remoção de um conhecido na tabela](./readmeImgs/conhecido/deletandoConhecido.gif)
+  <br><br>
 
-- ### Removendo Conhecido
-Para remover um conhecido, todos os seus contatos devem ter sido removidos anteriormente, ou seja ele não pode ter nenhum contato salvo ou um erro será apresentado.<br><br>
-![Gif demonstrando a remoção de um conhecido na tabela](./readmeImgs/conhecido/deletandoConhecido.gif)
-<br><br>
+  ## Tabela Contato
+  - ### Inserindo novo contato
+  Para inserir um novo contato, primeiro deve-se selecionar o conhecido em que deseja adicionar o contato, na primeira tela, então alterar a tela para contato e então selecionar o botão inserir. O mesmo conceito será utilizado para alteração e remoção.<br><br>
+  ![Gif demonstrando a inserção de um novo contato na tabela](./readmeImgs/contato/inserindoContato.gif)
+  <br>
 
-## Tabela Contato
-- ### Inserindo novo contato
-Para inserir um novo contato, primeiro deve-se selecionar o conhecido em que deseja adicionar o contato, na primeira tela, então alterar a tela para contato e então selecionar o botão inserir. O mesmo conceito será utilizado para alteração e remoção.<br><br>
-![Gif demonstrando a inserção de um novo contato na tabela](./readmeImgs/contato/inserindoContato.gif)
-<br>
+  - ### Alterando novo contato
+  ![Gif demonstrando a alteração de um contato na tabela](./readmeImgs/contato/alterandoContato.gif)
+  <br>
 
-- ### Alterando novo contato
-![Gif demonstrando a alteração de um contato na tabela](./readmeImgs/contato/alterandoContato.gif)
-<br>
-
-- ### Removendo novo contato
-![Gif demonstrando a remoção de um novo contato na tabela](./readmeImgs/contato/deletandoContato.gif)
+  - ### Removendo novo contato
+  ![Gif demonstrando a remoção de um novo contato na tabela](./readmeImgs/contato/deletandoContato.gif)
+ </div>
