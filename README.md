@@ -3,12 +3,12 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
 ## <a href="https://drive.google.com/file/d/1S-v5-aNZMSCWquK5FhN2VlZAyzqn0FA3/view)" taget="_blank">link da aula</a>
 
 # Sumário
-1. Descrição
-   - <a href="#descProjeto">Descrição do Projeto</a>
-- <a href="#instalacao">Instalação</a>
-- <a href="#configuracao">Configuração</a>
-- <a href="#demoPrograma">Demonstração do Programa</a>
-
+1. <a href="#descProjeto">Descrição do Projeto</a>
+2. <a href="#instalacao">Instalação</a>
+3. <a href="#configuracao">Configuração</a>
+4. <a href="#demoPrograma">Demonstração do Programa</a>
+   - <a href="tabelaConhecido"> Tabela Conhecido </a>
+   - <a href="tabelaContato"> Tabela Contato </a>
 
 <div id="descProjeto"> 
   <h1> Descricao do Projeto </h1>
@@ -63,31 +63,34 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
 <div id="demoPrograma">
   <h1> Demonstração do Programa </h1>
   A seguir alguns gifs com a demonstração do funcionamento pleno do programa para referência.
+   <div id="tabelaConhecido">
+     ## Tabela Conhecido
+     - ### Inserindo Conhecido
+     ![Gif demonstrando a inserção de um novo conhecido na tabela](./readmeImgs/conhecido/inserindoConhecido.gif)
+     <br>
 
-  ## Tabela Conhecido
-  - ### Inserindo Conhecido
-  ![Gif demonstrando a inserção de um novo conhecido na tabela](./readmeImgs/conhecido/inserindoConhecido.gif)
-  <br>
+     - ### Alterando Conhecido
+     ![Gif demonstrando a alteraão de um conhecido na tabela](./readmeImgs/conhecido/alterandoConhecido.gif)
+     <br>
 
-  - ### Alterando Conhecido
-  ![Gif demonstrando a alteraão de um conhecido na tabela](./readmeImgs/conhecido/alterandoConhecido.gif)
-  <br>
+     - ### Removendo Conhecido
+     Para remover um conhecido, todos os seus contatos devem ter sido removidos anteriormente, ou seja ele não pode ter nenhum contato salvo ou um erro será                  apresentado.<br><br>
+     ![Gif demonstrando a remoção de um conhecido na tabela](./readmeImgs/conhecido/deletandoConhecido.gif)
+     <br><br>
+   </div>
+   
+   <div id="tabelaContato">
+     ## Tabela Contato
+     - ### Inserindo novo contato
+     Para inserir um novo contato, primeiro deve-se selecionar o conhecido em que deseja adicionar o contato, na primeira tela, então alterar a tela para contato e          então selecionar o botão inserir. O mesmo conceito será utilizado para alteração e remoção.<br><br>
+     ![Gif demonstrando a inserção de um novo contato na tabela](./readmeImgs/contato/inserindoContato.gif)
+     <br>
 
-  - ### Removendo Conhecido
-  Para remover um conhecido, todos os seus contatos devem ter sido removidos anteriormente, ou seja ele não pode ter nenhum contato salvo ou um erro será apresentado.<br><br>
-  ![Gif demonstrando a remoção de um conhecido na tabela](./readmeImgs/conhecido/deletandoConhecido.gif)
-  <br><br>
+     - ### Alterando novo contato
+     ![Gif demonstrando a alteração de um contato na tabela](./readmeImgs/contato/alterandoContato.gif)
+     <br>
 
-  ## Tabela Contato
-  - ### Inserindo novo contato
-  Para inserir um novo contato, primeiro deve-se selecionar o conhecido em que deseja adicionar o contato, na primeira tela, então alterar a tela para contato e então selecionar o botão inserir. O mesmo conceito será utilizado para alteração e remoção.<br><br>
-  ![Gif demonstrando a inserção de um novo contato na tabela](./readmeImgs/contato/inserindoContato.gif)
-  <br>
-
-  - ### Alterando novo contato
-  ![Gif demonstrando a alteração de um contato na tabela](./readmeImgs/contato/alterandoContato.gif)
-  <br>
-
-  - ### Removendo novo contato
-  ![Gif demonstrando a remoção de um novo contato na tabela](./readmeImgs/contato/deletandoContato.gif)
- </div>
+     - ### Removendo novo contato
+     ![Gif demonstrando a remoção de um novo contato na tabela](./readmeImgs/contato/deletandoContato.gif)
+    </div>
+   </div>
