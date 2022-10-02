@@ -65,7 +65,7 @@ Nesta branch (raphael) está todas as alterações feitas por mim. Já na branch
   A seguir alguns gifs com a demonstração do funcionamento pleno do programa para referência.
    
    <div id="tabelaConhecido">
-     <h1> Tabela Conhecido <h1>
+     <h1> Tabela Conhecido </h1>
         
      - ### Inserindo Conhecido
      ![Gif demonstrando a inserção de um novo conhecido na tabela](./readmeImgs/conhecido/inserindoConhecido.gif)
